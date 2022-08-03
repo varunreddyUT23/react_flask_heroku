@@ -1,7 +1,8 @@
-from flask import Flask;
+from flask import Flask, send_from_directory;
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__, static_folder='./my-app/build', static_url_path='/')
+CORS(app)
 
 @app.route('/')
 def index():
